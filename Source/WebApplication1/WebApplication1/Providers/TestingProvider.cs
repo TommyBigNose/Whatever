@@ -8,17 +8,16 @@ public interface ITestingProvider
 public class TestingProvider : ITestingProvider
 {
     private Random _random;
-    private List<string> _variousStrings;
+    private List<string> VariousStrings => ["one", "two", "three"];
 
     public TestingProvider()
     {
         _random = new Random();
-        _variousStrings = ["one", "two", "three"];
     }
     
     public string GetSomeRandomString()
     {
-        string result = _variousStrings[_random.Next(_variousStrings.Count)];
+        string result = VariousStrings[_random.Next(VariousStrings.Count)];
         return result;
     }
 }
