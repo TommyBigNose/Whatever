@@ -1,4 +1,6 @@
-﻿namespace AvaloniaApplication1.ViewModels;
+﻿using AvaloniaApplication1.Services;
+
+namespace AvaloniaApplication1.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
