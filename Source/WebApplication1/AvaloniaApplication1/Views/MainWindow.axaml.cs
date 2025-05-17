@@ -14,5 +14,10 @@ public partial class MainWindow : Window
     {
         Console.WriteLine("I've been clicked!");
         buttonMessage.Text = "Button clicked!";
+        if (pbClickProgress.Value >= 100.0)
+        {
+            pbClickProgress.Value = 0;
+        }
+        pbClickProgress.Value += 10.0;
     }
 }
