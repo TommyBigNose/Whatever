@@ -23,6 +23,7 @@ public partial class MainWindow : Window
     {
         tbHeader.Text = _mainWindowViewModel.Greeting;
         btnClickMe.Content = _mainWindowViewModel.ButtonText;
+        btnGuid.Content = _mainWindowViewModel.ButtonGuidText;
     }
     
     public void ClickHandler(object sender, RoutedEventArgs args)
@@ -35,5 +36,17 @@ public partial class MainWindow : Window
             pbClickProgress.Value = 0;
         }
         pbClickProgress.Value += 10.0;
+    }
+
+    /// <summary>
+    /// https://docs.avaloniaui.net/docs/concepts/services/clipboard
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="args"></param>
+    public async void GenerateRandomGuid(object sender, RoutedEventArgs args)
+    {
+        string guid = Guid.CreateVersion7().ToString();
+        await TopLevel.GetTopLevel(this).Clipboard.SetTextAsync(guid);
+        tbGuidBlock.Text = guid;
     }
 }
