@@ -16,5 +16,6 @@ public static class ServiceCollectionExtensions
         services.AddScoped<MainWindowViewModel>();
         services.AddScoped<MainWindow>();
         services.AddScoped<ITestService, TestService>();
+        services.AddScoped<IProgressBar, ProgressBar>();
     }
 }
