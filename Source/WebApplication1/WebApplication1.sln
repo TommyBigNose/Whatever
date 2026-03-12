@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication1", "Ava
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorConsoleTest", "RazorConsoleTest\RazorConsoleTest.csproj", "{A8DB25B6-B489-48D9-9D11-00A2AEE5BCCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication3", "AvaloniaApplication3\AvaloniaApplication3.csproj", "{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{A8DB25B6-B489-48D9-9D11-00A2AEE5BCCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8DB25B6-B489-48D9-9D11-00A2AEE5BCCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8DB25B6-B489-48D9-9D11-00A2AEE5BCCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
