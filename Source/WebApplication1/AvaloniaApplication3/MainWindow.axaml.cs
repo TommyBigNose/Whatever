@@ -29,6 +29,23 @@ public partial class MainWindow : Window
         listOfActiveWindows.AddRange(GetActiveWindows().Select(_=>_).OrderBy(_=>_));
         tbListOfActiveWindows.Text = string.Join('\r', listOfActiveWindows);
     }
+    
+    public async void PopUpNewWindow(object sender, RoutedEventArgs args)
+    {
+        var newWindow = new Window
+        {
+            Title = "New Window",
+            Width = 400,
+            Height = 300,
+            Content = new TextBlock
+            {
+                Text = "This is a new window!",
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            }
+        };
+        newWindow.Show();
+    }
 
     public List<string> GetActiveWindows()
     {

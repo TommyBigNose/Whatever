@@ -10,7 +10,10 @@
     <StackPanel HorizontalAlignment="Left">
         <TextBox Name="tbResolution">Resolution</TextBox>
         <TextBox Name="tbListOfActiveWindows">Active Windows</TextBox>
-        <Button Name="btnTest" Click="GetMainMonitorResolution">Button</Button>
+        <Button Name="btnTest" Click="GetMainMonitorResolution">GetActiveWindows</Button>
+        
+        <Button Name="btnPopUpNewWindow" Click="PopUpNewWindow">PopUpNewWindow</Button>
+        
     </StackPanel>
     
 </Window>
