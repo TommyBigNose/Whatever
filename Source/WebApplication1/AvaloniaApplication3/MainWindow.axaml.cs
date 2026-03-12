@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 
 namespace AvaloniaApplication3;
 
@@ -37,12 +39,22 @@ public partial class MainWindow : Window
             Title = "New Window",
             Width = 400,
             Height = 300,
-            Content = new TextBlock
-            {
-                Text = "This is a new window!",
-                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-                VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
-            }
+            BorderBrush = Avalonia.Media.Brushes.Gainsboro,
+            BorderThickness = new Thickness(2),
+            CanMaximize = false,
+            CanMinimize = false,
+            CanResize = true,
+            ShowInTaskbar = false,
+            // ExtendClientAreaTitleBarHeightHint = -1,
+            ExtendClientAreaChromeHints = ExtendClientAreaChromeHints.NoChrome,
+            SystemDecorations = SystemDecorations.Full,
+            TransparencyBackgroundFallback = Avalonia.Media.Brushes.Transparent,
+            // Content = new TextBlock
+            // {
+            //     Background = Avalonia.Media.Brushes.Transparent,
+            //     // HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+            //     // VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            // }
         };
         newWindow.Show();
     }
