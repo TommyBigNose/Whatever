@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorConsoleTest", "RazorCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication3", "AvaloniaApplication3\AvaloniaApplication3.csproj", "{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{DDD397DE-E2EF-489B-94D7-D955EB579F34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26D664A7-6074-4BE8-97B1-F8CBDBA1743A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD397DE-E2EF-489B-94D7-D955EB579F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD397DE-E2EF-489B-94D7-D955EB579F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD397DE-E2EF-489B-94D7-D955EB579F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD397DE-E2EF-489B-94D7-D955EB579F34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
