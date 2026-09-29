@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Data.SQLite;
+using System.Net.Mime;
 
 Console.WriteLine("Hello, World!");
 
@@ -40,12 +41,34 @@ using (var command = new SQLiteCommand(insertTableQuery, connection))
 }
 
 // Output to console
-string selectTableQuery = @"SELECT * FROM TestTable;";
+string selectTableQuery = @"
+SELECT
+    json_group_array(
+    json_object(
+        'id', id,
+        'name', name,
+        'dateCreated', DateCreated
+    )
+) AS result
+FROM TestTable;
+
+";
+// string selectTableQuery = @"SELECT * FROM TestTable;";
 using (var command = new SQLiteCommand(selectTableQuery, connection))
 {
     using var reader = command.ExecuteReader();
     while (reader.Read())
     {
-        Console.WriteLine($"Id: {reader["Id"]}, Name: {reader["Name"]}, DateCreated: {reader["DateCreated"]}");
+        // Console.WriteLine($"Id: {reader["Id"]}, Name: {reader["Name"]}, DateCreated: {reader["DateCreated"]}");
+        string json = reader.GetString(0);
+        var test = System.Text.Json.JsonSerializer.Deserialize<List<TestTable>>(json);
+        Console.WriteLine($"{test}");
     }
+}
+
+public class TestTable
+{
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public DateTime DateCreated { get; set; }
 }
