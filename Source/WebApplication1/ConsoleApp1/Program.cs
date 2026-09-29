@@ -2,6 +2,7 @@
 
 using System.Data.SQLite;
 using System.Net.Mime;
+using System.Text.Json;
 
 Console.WriteLine("Hello, World!");
 
@@ -45,9 +46,9 @@ string selectTableQuery = @"
 SELECT
     json_group_array(
     json_object(
-        'id', id,
-        'name', name,
-        'dateCreated', DateCreated
+        'id', Id,
+        'name', Name,
+        'dateCreated', strftime('%Y-%m-%dT%H:%M:%SZ', DateCreated)
     )
 ) AS result
 FROM TestTable;
@@ -61,14 +62,22 @@ using (var command = new SQLiteCommand(selectTableQuery, connection))
     {
         // Console.WriteLine($"Id: {reader["Id"]}, Name: {reader["Name"]}, DateCreated: {reader["DateCreated"]}");
         string json = reader.GetString(0);
-        var test = System.Text.Json.JsonSerializer.Deserialize<List<TestTable>>(json);
-        Console.WriteLine($"{test}");
+        List<TestTable>? test = JsonSerializer.Deserialize<List<TestTable>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true,});
+        foreach (TestTable row in test)
+        {
+            Console.WriteLine($"{row}");
+        }
     }
 }
 
-public class TestTable
+public record TestTable
 {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string Name { get; set; }
     public DateTime DateCreated { get; set; }
+
+    public override string ToString()
+    {
+        return $"Id: {Id}, Name: {Name}, DateCreated: {DateCreated}";
+    }
 }
